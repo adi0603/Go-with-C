@@ -1,4 +1,4 @@
-#Go With C
+### Go With C
 ___
 
 
@@ -170,7 +170,6 @@ ___
   }
   ```
 
-* Write a program that accepts two integers from the keyboard and prints their average. Replace the sequence `int main()` with `int main(void)` and `main()` and drop the `return` statement. Does the program still compile and execute properly?
 
 * The following code section compiles correctly but doesn't work properly. What is wrong with it?
 
@@ -181,7 +180,6 @@ ___
   printf("Quitting...\n");
   ```
 
-* Write a program that uses a `while` loop to print the integers from 1 to 10. If you replace the `<` operator with `<=`, what else do you need to do to obtain the same output?
 
 * What is the following program meant to display? Now try out the following.
 
@@ -531,7 +529,6 @@ ___
    4. a1,
    5. 2017_month
 
-2. How many elements are there in "abcd"?
 
 3. Will the following code segment print properly? Explain with reasons.
 
@@ -541,11 +538,6 @@ ___
    printf("%s\n", stg1);
    printf("%s\n", stg2);
    ```
-
-4. Since 'A' is actually an integer, will `printf("%c", 'A');` display the same output as `printf("%d", 'A');`? Explain with reasons.
-
-
-
 ___
 
 
@@ -575,45 +567,6 @@ ___
        return 0;
    }
    ```
-
-4. Write a program that accepts a positive integer from the user and prints the value in decimal, octal and hexadecimal.
-
-5. Write a program that assigns the maximum values of an unsigned short (typically, 2 bytes) and unsigned int (typically, 4 bytes) to two variabes. What is the output when you print ont more than this maximum value with `printf`? Explain with reasons.
-
-6. Study the following program and answer the following questions.
-
-   1. What does the program display?
-
-   2. Is there any difference between the two lines of output?
-
-   3. Why was the second `printf` statement provided?
-
-   4. If both loops performed an additional iteration, what would be the next item to be printed?
-
-      ```C
-      #include <stdio.h>
-      int main()
-      {
-          char c = '0';
-          short s = 0;
-          while ( c <= '9' )
-          {
-              printf("%c ", c);
-              c = c + 1;
-          }
-          printf("\n");
-          while ( s <= 9 )
-          {
-              printf("%hd ", s);
-              s++;
-          }
-          return 0;
-      }
-      ```
-
-7. Write a program that uses two `while` loops to populate a 6-element `long` array with the first 6 positive integers and a 7-element `char` array with the first 6 (not 7) letters of the English alphabet. After printing both arrays, set the 7th element of the `char` array to '\0' and then reprint this array. Explain your observations.
-
-
 
 ___
 
@@ -693,38 +646,6 @@ ___
 
 
 
-### Question 3
-
-What will be the output of the following program?
-
-```C
-#include <stdio.h>
-
-int main()
-{
-    char char1 = 1, char2 = 1;
-    short short1 = 1, short2 = 1;
-    int int1 = 9, int2 = 5;
-
-    // char and short automatically promoted to int
-    printf("Size of char1 = %d bytes\n", sizeof char1);
-    printf("Size of char1 * char2 = %d\n", sizeof(char1 * char2));
-    printf("Size of short1 = %d\n", sizeof short1);
-    printf("Size of short1 * short2 = %d\n", sizeof(short1 * short2));
-
-    //automatic conversion on int to float. First 2 cases prevent truncation in integer division but not 3rd one.
-    printf("1. 9.0f / 5 = %f\n", 9.0 / 5);
-    printf("2. 1.0 * int1 / int2 = %f\n", 1.0 * int1 / int2);
-    printf("3. int1 / int2 * 1.0 = %f\n", int1 / int2 * 1.0);
-
-    return 0;
-}
-```
-
-
-
-___
-
 
 
 ### Question 4
@@ -759,41 +680,6 @@ int main()
 
 ___
 
-
-
-### Question 5
-
-What will be the output of the following program if the user inputs 40?
-
-```C
-#include <stdio.h>
-int main()
-{
-    float f, celsius;
-    short year = 2014, years_left;
-
-    f = 7 * 8 + 9 - 16 / 4;
-    printf("1. %.2f\n", f);
-
-    f = 7 * (8 + 9) - 16 / 4;
-    printf("2. %.2f\n", f);
-
-    years_left = 4 - year % 4;
-    printf("3. years_left = %hd\n", years_left);
-
-    printf("4. Enter the temperature in celsius ");
-    scanf("%f", &celsius);
-
-    printf("5. %.2fC = %.2fF (Correct)\n", celsius, celsius * 9 / 5 + 32);
-    printf("6. %.2fC = %.2fF (Incorrect)\n", celsius, 9 / 5 * celsius + 32);
-
-    return 0;
-}
-```
-
-
-
-___
 
 
 
@@ -959,21 +845,9 @@ ___
 
 ## Programming & Debugging Skills 3
 
-1. Write a program that computes and prints the quotient and remainder of a division of two integers that are accepted fromt he keyboard with `scanf`.
 
-2. Write a program that accepts the dimensions of a rectangle as an integer and floating point number and prints the area and perimeter.
 
-3. Using the temperature-conversion formaula `C / 5 = ( F - 32 ) / 9`, write a program that accepts a temperature (in decimal) in Fahrenheit and prints the converted temperature in Celsius without using a cast. Modify the program to use a cast and note your observations.
-
-4. Write a program that accpets an integer fromt he keyboard and prints "ODD" or "EVEN" depending on its value.
-
-5. Write a program that accepts the time taken as hours, minutes and seconds as 3 integers and prints the total number of seconds.
-
-6. Write a program to accept the file size in MB (megabytes) and the download speed in Mbps (megabits/sec) and calculate the time in seconds that would be spent to download the file. (Note it's megabytes nad megabits).
-
-7. Using the formula `area = (base x height) / 2`, write a program that accepts the base and height of a triangle as integers and prints the area as a real number. (Use of the multiplier 1.0 is not permitted.)
-
-8. The `scanf` funtion returns the number of items read successfully. Why doesn't the code run properly when two integers are input?
+1. The `scanf` funtion returns the number of items read successfully. Why doesn't the code run properly when two integers are input?
 
    ```C
    int x, y, num;
@@ -983,7 +857,7 @@ ___
    }
    ```
 
-9. Write a program to swap two variables without using a third variable.
+2. Write a program to swap two variables without using a third variable.
 
 
 
